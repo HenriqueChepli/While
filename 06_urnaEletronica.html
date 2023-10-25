@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    Problema: Urna eletrônica
+    Faça um programa que simule a urna eletrônica.
+    A tela a ser apresentada deverá ser da seguinte forma:
+    As opções são:
+    1. Candidato Joãozinho
+    2. Candidato Mariazinha
+    3. Nulo
+    4. Branco
+    Entre com o seu voto:
+
+    O programa deverá ler os votos dos eleitores e, quando for entrado o número 0, apresentar as seguintes
+    informações:
+    a) O número de votos de cada candidato;
+    b) A porcentagem de votos nulos;
+    c) A porcentagem de votos brancos;
+    d) O candidato vencedor.
+    */
+
+    //Entrada
+    let jaozinho = 0;
+    let mariazinha = 0;
+    let nulo = 0;
+    let branco = 0;
+    let voto = Number(prompt(`Urna Eletronica. 1-Joãozinho ; 2-Mariazinha ; 3-Nulo ; 4-Branco`))
+    while (voto != 0) {
+        (voto > 4 || voto < 0 || Number.isInteger(voto) == false || isNaN(voto)) ? alert(`Voto não computado`) : null;
+        voto = Number(prompt(`Urna Eletronica. 1-Joãozinho ; 2-Mariazinha ; 3-Nulo ; 4-Branco`))
+        switch (voto) {
+            case (1): jaozinho++; break;
+            case (2): mariazinha++; break;
+            case (3): nulo++; break;
+            case (4): branco++; break
+        }
+    }
+    document.write(`Quantidade de votos gerais: ${jaozinho + mariazinha + nulo + branco} <br> Quantidade de votos do Joãozinho${jaozinho}<br>Quantidade de votos da Mariazinha: ${mariazinha} <br> Porcentagem de votos em branco: ${(branco / (jaozinho + mariazinha + nulo + branco) * 100).toFixed(1)}% <br> Porcentagem de votos nulos: ${(nulo / (jaozinho + mariazinha + nulo + branco) * 100).toFixed(1)}% <br> ${(jaozinho > mariazinha) ? "joaozinho foi o vencedor" : "mariazinha foi a vencedora"}`)
+
+
+
+    //Processamento
+
+
+    //Saída
+
+</script>

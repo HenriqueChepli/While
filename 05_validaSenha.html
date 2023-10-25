@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    Problema: Validar senha
+    Faça um programa que receba uma senha formada de quatro números inteiros, verifique se a senha está correta e, caso não esteja, solicite novamente a senha. Se a senha entrada for a correta, deverá ser apresentada a mensagem “Senha Correta”, caso contrário, “Senha Incorreta”.
+    */
+
+    //Entrada
+    let senha = Number(prompt(`Crie seu codigo pin`));
+    while (senha.toString().length != 4 || isNaN(senha) || Number.isInteger(senha) == false) {
+        let senha = Number(prompt(`Crie seu codigo pin`))
+    };
+    let pin = Number(prompt(`Insira seu codigo pin`));
+    let tentativas = 3
+    while (senha != pin && tentativas > 0) {
+        pin = Number(prompt(`Insira seu codigo pin! ${tentativas} Tentativas restantes`));
+        tentativas--
+    }
+    (tentativas > 0) ? alert(`Sucesso Senha correta!!`) : alert(`Excedeu o limite de tentativas!`);
+
+
+    //Processamento
+
+
+    //Saída
+
+</script>
